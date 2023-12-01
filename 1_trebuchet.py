@@ -1,7 +1,7 @@
 #day 1
 import re
 
-with open("data/input_1.txt", "r") as file:
+with open(" ", "r") as file:
     items = file.read().replace('\n', ' ').split(" ")
 
 numbers = {
