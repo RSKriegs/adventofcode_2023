@@ -20,7 +20,6 @@ final_list = []
 for item in items:
     temp = ''
     for x in list(item):
-        i += 1
         temp += x
         for k, v in numbers.items():
             if k in temp:
