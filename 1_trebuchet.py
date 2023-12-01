@@ -1,6 +1,4 @@
 #day 1
-import re
-
 with open(" ", "r") as file:
     items = file.read().replace('\n', ' ').split(" ")
 
