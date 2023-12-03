@@ -1,4 +1,4 @@
-#day 1
+#day 3
 with open("", "r") as file:
     items = file.read().rstrip().split('\n')
 
