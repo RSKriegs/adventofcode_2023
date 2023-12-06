@@ -46,6 +46,13 @@ if __name__ == '__main__':
     didn't have time to optimize this part too much. Actually I've tried but failed, because I've tried to decrease input, 
     but after half an hour I've realized that my method doesn't affect it at all :D anyway I include it, maybe it would work
     for somebody else. I've decided to apply the same function for part 1 and both part 2 and run a brute force.'''
+
+    '''
+    TODO: rework it as follows:
+    1. create a while = True loop and a counter.
+    2. start calculating in the same manner as part 1 but in reverse - starting from locations. Increment counter for each iteration.
+    3. once the counter equals one of the original seeds, break and return its value.'''
+
     import multiprocessing as mp
     
     ranges_for_ranges = []
