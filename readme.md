@@ -6,4 +6,4 @@ Progress: <br>
 3rd day - 2 parts done <br>
 4th day - 2 parts done <br>
 5th day - 2 parts done <br>
-6th day - 1 part done <br>
+6th day - 2 parts done <br>
