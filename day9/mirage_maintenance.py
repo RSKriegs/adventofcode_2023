@@ -17,4 +17,6 @@ if __name__ == "__main__":
     #part 1
     print(sum([extrapolate(tuple(sequence)) for sequence in sequences]))
 
+    #part 2
+    print(sum([extrapolate(tuple(sequence[::-1])) for sequence in sequences]))
 
