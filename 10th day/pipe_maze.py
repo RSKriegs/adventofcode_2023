@@ -1,4 +1,5 @@
 import sys
+from shapely import Point, Polygon
 
 sys.setrecursionlimit(9999999)
 
@@ -16,7 +17,9 @@ def navigate(x, y):
 
 def dfs(x, y):
     global counter
+    global points
     counter += 1
+    points.append((x, y))
     visited[y][x] = True
  
     if y - 1 > -1 and y - 1 < len(graph):
@@ -50,8 +53,21 @@ if __name__ == "__main__":
     for i, sublist in enumerate(graph):
         if "S" in sublist:
             start = [sublist.index("S"), i]
-            sublist[sublist.index("S")] = 'F'
-
+    
     counter = 0
+    points = []
+
+    #part 1
     dfs(*start)
     print(counter//2)
+
+    #part 2
+    polygon = Polygon(points)
+    for y in range(len(graph)):
+        for x in range(len(graph[y])):
+            if graph[y][x] == ".":
+                p = Point(x+0.5, y+0.5)
+    print(polygon.area+1-counter/2)
+    
+
+
