@@ -11,4 +11,4 @@ Parts completed: 20/22 <br>
 8th day - 2 parts done <br>
 9th day - 2 parts done <br>
 10th day - 2 parts done <br>
-11th day - 0 parts done <br>
+11th day - 1 part done <br>
