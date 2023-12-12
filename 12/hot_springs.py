@@ -1,6 +1,8 @@
+import sys
 from functools import lru_cache
 
-@lru_cache()
+sys.setrecursionlimit(99999999)
+
 def find_arrangements(springs, groups, temp = "", visited = ()):
     global counter
 
@@ -13,7 +15,7 @@ def find_arrangements(springs, groups, temp = "", visited = ()):
         if len(springs) == 0 or "#" not in springs:
             counter += 1
             visited = visited + tuple(temp + "." * len(springs))
-        return True
+        return False
     
     if springs[0] == "?":
         find_arrangements(tuple("#") + springs[1:], groups, temp, visited)
@@ -33,6 +35,7 @@ if __name__=="__main__":
     with open("data/input_12.txt", "r") as file:
         items = file.read().rstrip().split('\n')
 
+    #part 1
     springs = [(list(item.split(' ')[0]),list(map(lambda x: int(x), item.split(' ')[1].split(',')))) for item in items]
     counter = 0
 
@@ -40,3 +43,24 @@ if __name__=="__main__":
         find_arrangements(tuple(springs[i][0]), tuple(springs[i][1]))
 
     print(counter)
+
+    #part 2
+    new_springs = []
+    for i in range(0, len(springs)):
+        x_to_append = list()
+        x_to_append.extend(springs[i][0])
+        y_to_append = list()
+        y_to_append.extend(springs[i][1])
+        for j in range(1, 5):
+            x_to_append.extend(["?"] + springs[i][0])
+            y_to_append.extend(springs[i][1])
+        new_springs.append((x_to_append,y_to_append))
+
+    #TODO: alter recursion function to use cache as intended
+    # counter = 0
+    
+    # for i in range(0, len(new_springs)):
+    #     print(new_springs[i])
+    #     find_arrangements(tuple(new_springs[i][0]), tuple(new_springs[i][1]))
+
+    # print(counter)
