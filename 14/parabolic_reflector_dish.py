@@ -1,6 +1,3 @@
-import numpy as np
-from copy import deepcopy
-
 def tilt_beams(items):
     items = list(map(list, zip(*items)))
     for item in items:
@@ -36,4 +33,4 @@ if __name__=="__main__":
     beams = tilt_beams(items)
     print(get_result(beams))
 
-    #part 2
+    #couldn't solve part 2 with this approach so I've moved it to separate file
