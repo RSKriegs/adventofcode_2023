@@ -12,7 +12,6 @@ def find_reflections(pattern):
                     if result == 0 and i == 0 and j == 1:
                         result = j
                     for k in range(i, -1, -1):
-                        print(i, j, k, len(pattern), counter, max_counter, result)
                         if j + (i - k) >= len(pattern):
                             counter += 1
                             if counter >= max_counter:
@@ -30,6 +29,23 @@ def find_reflections(pattern):
                         counter += 1
     return result
 
+#I've decided to simplify the solution for the 2nd part in order to implement smudge checks
+def find_reflections_2(pattern):
+    for i in range(len(pattern)):
+        smudges = 0
+        for j in range(i + 1):
+            if j + i + 1 >= len(pattern):
+                break
+
+            temp_1 = pattern[i - j]
+            temp_2 = pattern[i + j + 1]
+            for x, y in zip(temp_1, temp_2):
+                if x != y:
+                    smudges += 1
+        if smudges == 1:
+            return i + 1
+    return 0
+
 if __name__=="__main__":
 
     with open("data/input_13.txt", "r") as file:
@@ -46,15 +62,21 @@ if __name__=="__main__":
         else:
             temp.append(list(items[i]))
     
+    #part 1
     results = []
     for pattern in patterns:
-        print(pattern)
         temp_1 = find_reflections(pattern)
         temp_2 = find_reflections(list(map(list, zip(*pattern))))
-        print(temp_2, temp_1)
         if temp_2 > temp_1:
             results.append(temp_2)
         else:
             results.append(100*temp_1)
-    print(results)
+    print(sum(results))
+
+    #part 2
+    results = []
+    for pattern in patterns:
+        temp_1 = find_reflections_2(pattern)
+        temp_2 = find_reflections_2(list(map(list, zip(*pattern))))
+        results.append(100*temp_1 + temp_2)
     print(sum(results))

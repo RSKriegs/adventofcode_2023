@@ -1,6 +1,6 @@
 A repository for my debut year of 2023 in Advent of Code. Let's see how long I gonna last.
 
-Parts completed: 24/26 <br>
+Parts completed: 26/28 <br>
 1st day - 2 parts done <br>
 2nd day - 2 parts done <br>
 3rd day - 2 parts done <br>
@@ -13,4 +13,5 @@ Parts completed: 24/26 <br>
 10th day - 2 parts done <br>
 11th day - 2 parts done <br>
 12th day - 2 parts done <br>
-13th day - 1 part done <br>
+13th day - 2 parts done <br>
+14th day - 0 parts done <br>
