@@ -13,4 +13,4 @@ Parts completed: 24/26 <br>
 10th day - 2 parts done <br>
 11th day - 2 parts done <br>
 12th day - 2 parts done <br>
-13th day - 0 parts done <br>
+13th day - 1 part done <br>
